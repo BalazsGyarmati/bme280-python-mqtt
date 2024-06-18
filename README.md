@@ -32,6 +32,17 @@ You can install these using pip3 like so:
 
 Install the requirements in the `root` enviroment, or whichever enviroment make sense for you. Currently I run the daemon as root for easy access to /dev/i2c
 
+### Installation
+Run these commands from the repo's folder:
+```
+# Edit the configuration file, fill the values for the MQTT server, elevation (in meters) and offset values:
+cp ./mqtt-example.ini ./mqtt.ini
+vi ./mqtt.ini
+sudo make install
+sudo mv ./mqtt.ini /etc/mqtt.ini
+sudo systemctl start bme280-mqtt
+```
+
 ### Notes
 
 configparser has recently been upgraded past python3.5, but that's the latest version of python on jesse, so you may have to install it like so:
